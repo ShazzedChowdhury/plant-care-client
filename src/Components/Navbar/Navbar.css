@@ -1,0 +1,9 @@
+ul li a {
+    color: #444;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.active {
+    border: 2px solid #4d7447;
+}
