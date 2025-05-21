@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router";
 import './Navbar.css'
-import { CgProfile } from "react-icons/cg";
 import userProfile from '../../assets/user-profile.png'
 
 const Navbar = () => {
@@ -22,7 +21,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav className="navbar bg-base-100 shadow-sm sticky top-0 left-0 px-5 md:px-30 lg:px-40">
+    <nav className="navbar bg-base-100 shadow-sm sticky z-10 top-0 left-0 px-5 md:px-30 lg:px-40">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost p-0 pr-3 lg:hidden">
