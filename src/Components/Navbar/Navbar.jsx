@@ -1,9 +1,15 @@
-import React from "react";
+import React, { use } from "react";
 import { Link, NavLink } from "react-router";
-import './Navbar.css'
-import userProfile from '../../assets/user-profile.png'
+import "./Navbar.css";
+import userProfile from "../../assets/user-profile.png";
+import { AuthContext } from "../../Contexts/Firebase/AuthProvider";
+import button from "daisyui/components/button";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+  const { user, logOutUser, setUser } = use(AuthContext);
+
+  console.log(user);
   const links = (
     <>
       <li>
@@ -20,11 +26,32 @@ const Navbar = () => {
       </li>
     </>
   );
+
+
+  const handleLogOut = () => {
+    //log out user 
+    logOutUser()
+    .then(() => {
+        setUser(null)
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Loggedout successfully.",
+            showConfirmButton: false,
+            timer: 1500
+          });
+    }).catch(error => console.log(error))
+
+  }
   return (
     <nav className="navbar bg-base-100 shadow-sm sticky z-10 top-0 left-0 px-5 md:px-30 lg:px-40">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost p-0 pr-3 lg:hidden">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost p-0 pr-3 lg:hidden"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -66,10 +93,25 @@ const Navbar = () => {
       <div className="navbar-end gap-5">
         <div className="avatar">
           <div className="ring-primary ring-offset-base-100 w-10 rounded-full ring-2 ring-offset-2">
-            <img src={userProfile} />
+            <img src={user ? user.photoURL : userProfile} />
           </div>
         </div>
-        <button className="hidden md:block">Log out</button>
+        {user ? (
+          <button
+            onClick={handleLogOut}
+           className="btn bg-primary text-white hidden md:block font-semibold">
+            Log out
+          </button>
+        ) : (
+          <div className="flex gap-3">
+            <button className="btn border-2 border-primary hover:bg-primary hover:text-white hidden md:block">
+              Log In
+            </button>
+            <button className="btn border-2 border-primary hover:bg-primary hover:text-white hidden md:block">
+              Register
+            </button>
+          </div>
+        )}
       </div>
     </nav>
   );

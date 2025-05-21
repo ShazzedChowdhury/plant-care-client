@@ -4,7 +4,7 @@ import { AuthContext } from "../../Contexts/Firebase/AuthProvider";
 import Swal from "sweetalert2";
 
 const RegisterPage = () => {
-    const { createUser, updateUserInfo } = use(AuthContext);
+    const { createUser, updateUserInfo, setUser } = use(AuthContext);
     const [ errorMessage, setErrorMessage ] = useState('')
     const navigate = useNavigate();
 
@@ -34,6 +34,7 @@ const RegisterPage = () => {
         createUser(email,  password)
         .then(result => {
             if(result.user){
+                const user = result.user;
                 //update user profile
                 updateUserInfo({ displayName: userName, photoURL: photoUrl })
                 .then(() => {
