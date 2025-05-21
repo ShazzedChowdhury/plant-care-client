@@ -7,8 +7,10 @@
 @plugin "daisyui/theme" {
     name: "light";
     default: true;
+    --color-accent: #70b023;
     --color-primary: #4d7447;
-    --color-secondary: teal; }
+    --color-secondary: teal;
+ }
 
 * {
     font-family: "Poppins", sans-serif;

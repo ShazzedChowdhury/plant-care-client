@@ -1,6 +1,5 @@
 import React from 'react';
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -30,7 +29,7 @@ const BannerCarousel = () => {
                 <h1 className="text-5xl lg:text-6xl font-bold leading-14 md:leading-18">
                   Proper
                   <br />
-                  Care of<span className="text-[#70b023]"> Plants</span>
+                  Care of <span className="text-[#70b023]">Plants</span>
                 </h1>
                 <p className="w-full md:w-8/12 py-6">
                   "Welcome to your personal plant care companion! Whether you're

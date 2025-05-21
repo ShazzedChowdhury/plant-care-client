@@ -3,7 +3,8 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  onAuthStateChanged
+  onAuthStateChanged,
+  updateProfile
 } from "firebase/auth";
 import { app } from '../../Firebase/firebase_config';
 
@@ -14,13 +15,18 @@ const AuthProvider = ({ children }) => {
     const [ user, setUser ] = useState(null);
     const [ loading, setLoading ] = useState(true);
 
-
+    
+    console.log(user)
     const createUser = (email, password ) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const signInUser = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    const updateUserInfo = (updatedInfo) => {
+        return updateProfile(auth.currentUser, updatedInfo)
     }
 
     useEffect(() => {
@@ -38,8 +44,9 @@ const AuthProvider = ({ children }) => {
     }, [])
 
     const AuthInfo = {
-        name: 'shazzed'
-    }
+      createUser,
+      updateUserInfo,
+    };
     return (
         <AuthContext value={AuthInfo}>
             { children }
