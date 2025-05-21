@@ -6,8 +6,8 @@ import { AuthContext } from '../../Contexts/Firebase/AuthProvider';
 import Swal from 'sweetalert2';
 
 const LogInPage = () => {
-    const { signInUser, signInWithGoogle } = use(AuthContext);
-    const [ show, setShow ] = useState(false)
+    const { signInUser, signInWithGoogle, setUser } = use(AuthContext);
+    const [ show, setShow] = useState(false)
     const navigate = useNavigate();
 
     const handleSignInForm = (e) => {
@@ -20,7 +20,7 @@ const LogInPage = () => {
         signInUser(email, password)
         .then(result => {
             const loggedUser = result.user;
-            
+            setUser(loggedUser)
             //sweet alert
             Swal.fire({
               position: "center",
@@ -49,6 +49,7 @@ const LogInPage = () => {
         signInWithGoogle()
         .then(result => {
           const loggedUser = result.user;
+          setUser(loggedUser)
           //sweet alert
           Swal.fire({
             position: "center",
