@@ -1,13 +1,29 @@
 import React, { use } from "react";
-import { Link, NavLink } from "react-router";
 import "./Navbar.css";
 import userProfile from "../../assets/user-profile.png";
 import { AuthContext } from "../../Contexts/Firebase/AuthProvider";
-import button from "daisyui/components/button";
 import Swal from "sweetalert2";
+import { NavLink, useNavigate } from "react-router";
 
 const Navbar = () => {
   const { user, logOutUser, setUser } = use(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogOut = () => {
+    //log out user
+    logOutUser()
+      .then(() => {
+        setUser(null);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Loggedout successfully.",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => console.log(error));
+  };
 
   console.log(user);
   const links = (
@@ -22,27 +38,29 @@ const Navbar = () => {
         <NavLink to="/add-plant-form">Add Plant</NavLink>
       </li>
       <li>
-        <NavLink to="/my-plants">My plants</NavLink>
+        <NavLink to="/my-plants">My Plants</NavLink>
       </li>
+      <div className="block lg:hidden">
+        {user ? (
+          <li>
+            <button id="log-out" onClick={handleLogOut}>
+              Log out
+            </button>
+          </li>
+        ) : (
+          <>
+            <li>
+              <NavLink to="/auth/log-in-form">Log in</NavLink>
+            </li>
+            <li>
+              <NavLink to="/auth/register-form">Register</NavLink>
+            </li>
+          </>
+        )}
+      </div>
     </>
   );
 
-
-  const handleLogOut = () => {
-    //log out user 
-    logOutUser()
-    .then(() => {
-        setUser(null)
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Loggedout successfully.",
-            showConfirmButton: false,
-            timer: 1500
-          });
-    }).catch(error => console.log(error))
-
-  }
   return (
     <nav className="navbar bg-base-100 shadow-sm sticky z-10 top-0 left-0 px-5 md:px-30 lg:px-40">
       <div className="navbar-start">
@@ -91,23 +109,32 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end gap-5">
-        <div className="avatar">
-          <div className="ring-primary ring-offset-base-100 w-10 rounded-full ring-2 ring-offset-2">
-            <img src={user ? user.photoURL : userProfile} />
+        {user && (
+          <div className="avatar">
+            <div className="ring-primary ring-offset-base-100 w-10 rounded-full ring-2 ring-offset-2">
+              <img src={user ? user.photoURL : userProfile} />
+            </div>
           </div>
-        </div>
+        )}
         {user ? (
           <button
             onClick={handleLogOut}
-           className="btn bg-primary text-white hidden md:block font-semibold">
+            className="btn bg-primary text-white hidden md:block font-semibold"
+          >
             Log out
           </button>
         ) : (
           <div className="flex gap-3">
-            <button className="btn border-2 border-primary hover:bg-primary hover:text-white hidden md:block">
+            <button
+              onClick={() => navigate("/auth/log-in-form")}
+              className="btn border-2 border-primary hover:bg-primary hover:text-white hidden md:block"
+            >
               Log In
             </button>
-            <button className="btn border-2 border-primary hover:bg-primary hover:text-white hidden md:block">
+            <button
+              onClick={() => navigate("/auth/register-form")}
+              className="btn border-2 border-primary hover:bg-primary hover:text-white hidden md:block"
+            >
               Register
             </button>
           </div>

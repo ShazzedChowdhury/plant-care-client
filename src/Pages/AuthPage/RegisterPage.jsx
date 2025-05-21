@@ -2,6 +2,7 @@ import React, { use, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../Contexts/Firebase/AuthProvider";
 import Swal from "sweetalert2";
+import { CgArrowLongLeft } from "react-icons/cg";
 
 const RegisterPage = () => {
     const { createUser, updateUserInfo, setUser } = use(AuthContext);
@@ -63,9 +64,18 @@ const RegisterPage = () => {
 
     }
   return (
-    <section className="min-h-screen grid items-center">
-      <div className="card bg-base-100 w-full max-w-sm shadow-2xl mx-auto">
+    <section className="min-h-screen grid items-center px-5">
+      <div className="card bg-base-100 w-full max-w-sm shadow-lg mx-auto">
         <div className="card-body">
+          <div className="flex justify-start">
+            <span
+             title="Go back"
+             onClick={() => navigate('/')}
+             className="btn p-0 border-none bg-transparent shadow-none"
+            >
+              <CgArrowLongLeft className="text-primary" size={30} />
+            </span>
+          </div>
           <h1 className="text-4xl font-semibold md-4 text-center">
             Sign Up <span className="text-accent">Now!</span>
           </h1>
@@ -74,7 +84,7 @@ const RegisterPage = () => {
             <input
               type="text"
               name="userName"
-              className="input"
+              className="input w-full"
               placeholder="Name"
               required
             />
@@ -82,7 +92,7 @@ const RegisterPage = () => {
             <input
               type="email"
               name="email"
-              className="input"
+              className="input w-full"
               placeholder="Email"
               required
             />
@@ -90,7 +100,7 @@ const RegisterPage = () => {
             <input
               type="text"
               name="photoUrl"
-              className="input"
+              className="input w-full"
               placeholder="Photo URL"
               required
             />
@@ -98,12 +108,12 @@ const RegisterPage = () => {
             <input
               type="password"
               name="password"
-              className="input"
+              className="input w-full"
               placeholder="Password"
               required
             />
             <p className="text-sm text-red-500 font-normal">{errorMessage}</p>
-            <button type="submit" className="btn btn-primary mt-4">
+            <button type="submit" className="btn btn-primary text-white mt-4">
               Sign Up
             </button>
           </form>
