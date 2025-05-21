@@ -11,7 +11,7 @@ const AddPlantPage = () => {
         const form = e.target;
         const formData = new FormData(form);
         const inputData = Object.fromEntries(formData.entries());
-        console.log(inputData)
+        
 
         //send form data in the database
         fetch("http://localhost:3000/plants", {
@@ -27,12 +27,14 @@ const AddPlantPage = () => {
                 Swal.fire({
                   position: "center",
                   icon: "success",
-                  title: "Your submition successfully saved",
+                  title: "Your submission successfully saved",
                   showConfirmButton: false,
                   timer: 1500,
                 });
             }
         })
+
+        form.reset()
     }
   return (
     <section className="max-w-7xl mx-auto px-5 md:10 py-10">

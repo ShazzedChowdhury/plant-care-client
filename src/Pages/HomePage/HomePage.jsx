@@ -1,14 +1,14 @@
 import React, { use } from 'react';
 import { AuthContext } from '../../Contexts/Firebase/AuthProvider';
-import BannerCarousel from '../../Components/BannerCarousel/BannerCarousel';
+import BannerCarousel from './BannerCarousel/BannerCarousel';
+import NewAddPlantSec from './NewAddPlantSec/NewAddPlantSec';
 
 const HomePage = () => {
 
     return (
-      <>
-        <section>
+      <>       
           <BannerCarousel />
-        </section>
+          <NewAddPlantSec />
       </>
     );
 };
