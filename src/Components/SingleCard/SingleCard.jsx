@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 
 const SingleCard = ({plant}) => {
     const [ showOverlay, setOverLay ] = useState(false)
+    console.log(plant)
     return (
       <div
-       onClick={() => setOverLay(prev => !prev)}
-       className="card bg-base-100 shadow-sm relative overflow-hidden group h-96">
+        onClick={() => setOverLay((prev) => !prev)}
+        className="card bg-base-100 shadow-sm relative overflow-hidden group h-96"
+      >
         <img src={plant?.image} className="object-cover w-full h-full" />
 
         <div
@@ -15,6 +17,11 @@ const SingleCard = ({plant}) => {
               : "translate-y-8 opacity-0"
           } transform  group-hover:translate-0 group-hover:opacity-100 transition-all duration-2000`}
         >
+          <h1 className="text-white text-2xl font-bold mt-1">{plant.plantName}</h1>
+          <p className="text-white text-lg mb-2">
+            <span className='font-semibold'>Category:{" "}</span>
+            {plant?.category}
+          </p>
           <button className="btn btn-primary text-white">View Details</button>
         </div>
       </div>
