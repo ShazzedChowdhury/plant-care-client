@@ -40,7 +40,7 @@ const MyPlantsPage = () => {
     };
 
     return (
-      <section className="max-w-7xl px-5 md:-10 mx-auto py-10">
+      <section className="max-w-7xl px-5 md:-10 mx-auto py-10 min-h-[calc(100vh-464px)]">
         <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
           <table className="table max-w-sm md:max-w-full">
             {/* head */}
@@ -67,7 +67,7 @@ const MyPlantsPage = () => {
                   <td>{plant?.healthStatus}</td>
                   <td className="flex flex-col md:flex-row gap-2">
                     <Link
-                      to={`/all-plants/${plant?._id}`}
+                      to={`/update-plants/${plant?._id}`}
                       className="btn btn-xs"
                     >
                       Update

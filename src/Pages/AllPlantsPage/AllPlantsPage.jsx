@@ -4,7 +4,7 @@ const AllPlantsPage = () => {
     const plants = useLoaderData();
     
     return (
-      <section className="max-w-7xl px-5 md:-10 mx-auto py-10">
+      <section className="max-w-7xl px-5 md:-10 mx-auto py-10 min-h-[calc(100vh-464px)]">
         <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
           <table className="table">
             {/* head */}
@@ -31,9 +31,10 @@ const AllPlantsPage = () => {
                   <td>{plant?.healthStatus}</td>
                   <td>
                     <Link
-                     to={`/all-plants/${plant?._id}`}
-                     className='btn btn-xs'>
-                        View Details
+                      to={`/all-plants/${plant?._id}`}
+                      className="btn btn-xs"
+                    >
+                      View Details
                     </Link>
                   </td>
                 </tr>
