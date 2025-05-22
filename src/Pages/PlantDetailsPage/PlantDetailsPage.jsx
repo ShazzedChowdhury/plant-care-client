@@ -5,7 +5,7 @@ const PlantDetailsPage = () => {
     const selectedPlant = useLoaderData();
     
     return (
-      <section className="max-w-7xl mx-auto px-5 md:px-10 py-10">
+      <section className="max-w-7xl mx-auto px-5 md:px-10 py-10 min-h-[calc(100vh-464px)]">
         <div className="hero bg-base-200 rounded-lg">
           <div className="hero-content flex-col lg:flex-row justify-between w-full gap-10">
             <img

@@ -1,8 +1,11 @@
 import React, { use, useEffect, useState } from 'react';
 import SingleCard from '../../../Components/SingleCard/SingleCard';
+import { AuthContext } from '../../../Contexts/Firebase/AuthProvider';
+import LoadingSpiner from '../../../Components/Loader/LoadingSpiner';
 
 
 const NewPlantsSec = () => {
+    const { loading, setLoading } = use(AuthContext)
     const [ plants, setPlants ] = useState([]);
     const [ showAll, setShowAll ] = useState(false);
    
@@ -16,8 +19,13 @@ const NewPlantsSec = () => {
             } else {
                 setPlants(data);
             }
+            setLoading(false)
         })
     }, [showAll])
+
+    if(loading){
+      return <LoadingSpiner />
+    }
   
     return (
       <div className="bg-gray-100 h-fit">

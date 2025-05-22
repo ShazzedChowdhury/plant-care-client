@@ -9,6 +9,8 @@ import LogInPage from '../Pages/AuthPage/LogInPage';
 import RegisterPage from '../Pages/AuthPage/RegisterPage';
 import PlantDetailsPage from '../Pages/PlantDetailsPage/PlantDetailsPage';
 import UpdateMyPlantPage from '../Pages/UpdateMyPlantPage/UpdateMyPlantPage';
+import PrivateRouter from './PrivateRoute/PrivateRouter';
+import LoadingSpiner from '../Components/Loader/LoadingSpiner';
 
 const router = createBrowserRouter([
   {
@@ -24,29 +26,45 @@ const router = createBrowserRouter([
         path: "all-plants",
         loader: () => fetch("http://localhost:3000/all-plants"),
         element: <AllPlantsPage />,
+        hydrateFallbackElement: <LoadingSpiner />
       },
 
       {
         path: "all-plants/:id",
         loader: ({ params }) =>
           fetch(`http://localhost:3000/all-plants/${params.id}`),
-        element: <PlantDetailsPage />,
+        element: (
+          <PrivateRouter>
+            <PlantDetailsPage />
+          </PrivateRouter>
+        ),
+        hydrateFallbackElement: <LoadingSpiner />
       },
       {
         path: "add-plant-form",
-        element: <AddPlantPage />,
+        element: (
+          <PrivateRouter>
+            <AddPlantPage />
+          </PrivateRouter>
+        ),
       },
       {
         path: "my-plants/:email",
         loader: ({ params }) =>
           fetch(`http://localhost:3000/my-plants/${params.email}`),
-        element: <MyPlantsPage />,
+        element: (
+          <PrivateRouter>
+            <MyPlantsPage />
+          </PrivateRouter>
+        ),
+        hydrateFallbackElement: <LoadingSpiner />
       },
       {
         path: "/update-plants/:id",
         loader: ({ params }) =>
           fetch(`http://localhost:3000/all-plants/${params.id}`),
         element: <UpdateMyPlantPage />,
+        hydrateFallbackElement: <LoadingSpiner />
       },
     ],
   },

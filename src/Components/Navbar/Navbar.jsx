@@ -1,12 +1,15 @@
 import React, { use } from "react";
 import "./Navbar.css";
-import userProfile from "../../assets/user-profile.png";
 import { AuthContext } from "../../Contexts/Firebase/AuthProvider";
 import Swal from "sweetalert2";
 import { NavLink, useNavigate } from "react-router";
+import UserProfile from "../UserProfile/UserProfile";
+import RegisterBtn from "../RegisterBtn/RegisterBtn";
+import LogOutBtn from "../LogOutBtn/LogOutBtn";
+import LogInBtn from "../LogInBtn/LogInBtn";
 
 const Navbar = () => {
-  const { user, logOutUser, setUser } = use(AuthContext);
+  const { user, logOutUser, setUser, loading } = use(AuthContext);
   const navigate = useNavigate();
 
   const handleLogOut = () => {
@@ -109,35 +112,22 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end gap-5">
-        {user && (
-          <div className="avatar">
-            <div className="ring-primary ring-offset-base-100 w-10 rounded-full ring-2 ring-offset-2">
-              <img src={user ? user.photoURL : userProfile} />
-            </div>
-          </div>
-        )}
-        {user ? (
-          <button
-            onClick={handleLogOut}
-            className="btn bg-primary text-white hidden md:block font-semibold"
-          >
-            Log out
-          </button>
+        {!loading ? (
+          user && <UserProfile user={user} />
         ) : (
-          <div className="flex gap-3">
-            <button
-              onClick={() => navigate("/auth/log-in-form")}
-              className="btn border-2 border-primary hover:bg-primary hover:text-white hidden md:block"
-            >
-              Log In
-            </button>
-            <button
-              onClick={() => navigate("/auth/register-form")}
-              className="btn border-2 border-primary hover:bg-primary hover:text-white hidden md:block"
-            >
-              Register
-            </button>
-          </div>
+          <span className="loading loading-spinner text-accent"></span>
+        )}
+        {!loading ? (
+          user ? (
+            <LogOutBtn handleLogOut={handleLogOut} />
+          ) : (
+            <div className="flex gap-3">
+              <LogInBtn navigate={navigate} />
+              <RegisterBtn navigate={navigate} />
+            </div>
+          )
+        ) : (
+          <span className="loading loading-spinner text-accent"></span>
         )}
       </div>
     </nav>
