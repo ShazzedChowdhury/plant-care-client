@@ -9,8 +9,9 @@ import LogInPage from '../Pages/AuthPage/LogInPage';
 import RegisterPage from '../Pages/AuthPage/RegisterPage';
 import PlantDetailsPage from '../Pages/PlantDetailsPage/PlantDetailsPage';
 import UpdateMyPlantPage from '../Pages/UpdateMyPlantPage/UpdateMyPlantPage';
-import PrivateRouter from './PrivateRoute/PrivateRouter';
+import PrivateRouter from '../PrivateRoute/PrivateRouter';
 import LoadingSpiner from '../Components/Loader/LoadingSpiner';
+import PageNotFound from '../Pages/PageNotFound/PageNotFound';
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
     path: "auth/register-form",
     element: <RegisterPage />,
   },
+  {
+    path: '*',
+    element: <PageNotFound />
+  }
 ]);
 
 export default router;

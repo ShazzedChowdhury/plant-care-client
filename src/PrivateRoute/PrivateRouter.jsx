@@ -1,6 +1,6 @@
 import React, { use } from 'react';
-import { AuthContext } from '../../Contexts/Firebase/AuthProvider';
-import LoadingSpiner from '../../Components/Loader/LoadingSpiner';
+import { AuthContext } from '../Contexts/Firebase/AuthProvider';
+import LoadingSpiner from '../Components/Loader/LoadingSpiner';
 import { Navigate, useLocation } from 'react-router';
 
 const PrivateRouter = ({ children }) => {
@@ -16,7 +16,7 @@ const PrivateRouter = ({ children }) => {
         return children  
     }    
     
-    return <Navigate to="/auth/log-in-form"></Navigate>;
+    return <Navigate state={location?.pathname} to="/auth/log-in-form"></Navigate>;
 
 };
 

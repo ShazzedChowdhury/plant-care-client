@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router';
 import Swal from 'sweetalert2';
+import EmptyList from '../../Components/EmptyList/EmptyList';
 
 
 const MyPlantsPage = () => {
@@ -39,8 +40,12 @@ const MyPlantsPage = () => {
       });
     };
 
+    if(myPlants.length === 0) {
+       return <EmptyList />
+    }
+
     return (
-      <section className="max-w-7xl px-5 md:-10 mx-auto py-10 min-h-[calc(100vh-464px)]">
+      <section className="max-w-7xl px-5 md:-10 mx-auto pt-10 pb-40 min-h-[calc(100vh-464px)]">
         <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
           <table className="table max-w-sm md:max-w-full">
             {/* head */}

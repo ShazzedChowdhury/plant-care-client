@@ -37,7 +37,7 @@ const AddPlantPage = () => {
         form.reset()
     }
   return (
-    <section className="max-w-7xl mx-auto px-5 md:10 py-40 bg-white">
+    <section className="max-w-7xl mx-auto px-5 md:10 p-10 pb-40 bg-white">
       <div className="border border-gray-200 shadow-lg rounded-lg">
         <h1></h1>
         <p></p>

@@ -1,7 +1,7 @@
 import React, { use, useState } from 'react';
 import { CgArrowLongLeft } from 'react-icons/cg';
 import { VscEye, VscEyeClosed } from 'react-icons/vsc';
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../Contexts/Firebase/AuthProvider';
 import Swal from 'sweetalert2';
 
@@ -9,7 +9,9 @@ const LogInPage = () => {
     const { signInUser, signInWithGoogle, setUser } = use(AuthContext);
     const [ show, setShow] = useState(false)
     const navigate = useNavigate();
+    const location = useLocation();
 
+    console.log(location)
     const handleSignInForm = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -30,7 +32,7 @@ const LogInPage = () => {
               timer: 1500,
             });
 
-            navigate('/')
+            navigate(location?.state || '/')
         }).catch(error => {
             if(error || error.message === 'Firebase: Error (auth/invalid-credential).'){
                 Swal.fire({
@@ -59,7 +61,7 @@ const LogInPage = () => {
             timer: 1500,
           });
 
-          navigate('/')
+          navigate(location?.state || '/')
         }).catch(error => {
             const message = error.message
             Swal.fire({
