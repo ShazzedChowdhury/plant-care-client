@@ -7,6 +7,7 @@ import AddPlantPage from '../Pages/AddPlantPage/AddPlantPage';
 import MyPlantsPage from '../Pages/MyPlantsPage/MyPlantsPage';
 import LogInPage from '../Pages/AuthPage/LogInPage';
 import RegisterPage from '../Pages/AuthPage/RegisterPage';
+import PlantDetailsPage from '../Pages/PlantDetailsPage/PlantDetailsPage';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,12 @@ const router = createBrowserRouter([
         path: "all-plants",
         loader: () => fetch("http://localhost:3000/all-plants"),
         element: <AllPlantsPage />,
+      },
+
+      {
+        path: "all-plants/:id",
+        loader: ({params}) => fetch(`http://localhost:3000/all-plants/${params.id}`),
+        element: <PlantDetailsPage />,
       },
       {
         path: "add-plant-form",
