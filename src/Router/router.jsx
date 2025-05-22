@@ -9,37 +9,38 @@ import LogInPage from '../Pages/AuthPage/LogInPage';
 import RegisterPage from '../Pages/AuthPage/RegisterPage';
 
 const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <MainLayout />,
-        children: [
-            {
-                index: true,
-                path: '/',
-                element: <HomePage />
-            },
-            {
-                path: 'all-plants',
-                element: <AllPlantsPage />
-            },
-            {
-                path: 'add-plant-form',
-                element: <AddPlantPage />
-            }, 
-            {
-                path: 'my-plants',
-                element: <MyPlantsPage />
-            }
-        ]
-    },
-    {
-        path: 'auth/log-in-form',
-        element: <LogInPage />
-    },
-    {
-        path: 'auth/register-form',
-        element: <RegisterPage />
-    }
-])
+  {
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      {
+        index: true,
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "all-plants",
+        loader: () => fetch("http://localhost:3000/all-plants"),
+        element: <AllPlantsPage />,
+      },
+      {
+        path: "add-plant-form",
+        element: <AddPlantPage />,
+      },
+      {
+        path: "my-plants",
+        element: <MyPlantsPage />,
+      },
+    ],
+  },
+  {
+    path: "auth/log-in-form",
+    element: <LogInPage />,
+  },
+  {
+    path: "auth/register-form",
+    element: <RegisterPage />,
+  },
+]);
 
 export default router;

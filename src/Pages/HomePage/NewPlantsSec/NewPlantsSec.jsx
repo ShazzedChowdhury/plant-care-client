@@ -2,8 +2,7 @@ import React, { use, useEffect, useState } from 'react';
 import SingleCard from '../../../Components/SingleCard/SingleCard';
 
 
-
-const NewAddPlantSec = () => {
+const NewPlantsSec = () => {
     const [ plants, setPlants ] = useState([]);
     const [ showAll, setShowAll ] = useState(false);
    
@@ -21,7 +20,7 @@ const NewAddPlantSec = () => {
     }, [showAll])
   
     return (
-      <section className="bg-gray-100 h-fit">
+      <div className="bg-gray-100 h-fit">
         <div className="max-w-7xl mx-auto px-5 md:px-10 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {
                 plants.map(plant => <SingleCard key={plant?._id} plant={plant} />)
@@ -35,8 +34,8 @@ const NewAddPlantSec = () => {
             {showAll ? "Show Less" : "Show All"}
           </button>
         </div>
-      </section>
+      </div>
     );
 };
 
-export default NewAddPlantSec;
+export default NewPlantsSec;
