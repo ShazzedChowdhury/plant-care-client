@@ -27,7 +27,8 @@ const router = createBrowserRouter([
 
       {
         path: "all-plants/:id",
-        loader: ({params}) => fetch(`http://localhost:3000/all-plants/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/all-plants/${params.id}`),
         element: <PlantDetailsPage />,
       },
       {
@@ -35,7 +36,9 @@ const router = createBrowserRouter([
         element: <AddPlantPage />,
       },
       {
-        path: "my-plants",
+        path: "my-plants/:email",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/my-plants/${params.email}`),
         element: <MyPlantsPage />,
       },
     ],

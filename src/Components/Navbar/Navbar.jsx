@@ -38,7 +38,7 @@ const Navbar = () => {
         <NavLink to="/add-plant-form">Add Plant</NavLink>
       </li>
       <li>
-        <NavLink to="/my-plants">My Plants</NavLink>
+        <NavLink to={`/my-plants/${user?.email}`}>My Plants</NavLink>
       </li>
       <div className="block lg:hidden">
         {user ? (
@@ -62,7 +62,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="navbar bg-base-100 shadow-sm sticky z-10 top-0 left-0 px-5 md:px-30 lg:px-40">
+    <nav className="navbar bg-base-100 shadow-sm px-5 md:px-30 lg:px-40">
       <div className="navbar-start">
         <div className="dropdown">
           <div

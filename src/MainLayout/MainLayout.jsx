@@ -5,10 +5,10 @@ import Navbar from '../Components/Navbar/Navbar';
 const MainLayout = () => {
     return (
       <>
-        <header>
-          <Navbar />
-        </header>
         <main>
+          <header className="sticky z-10 top-0 left-0">
+            <Navbar />
+          </header>
           <Outlet />
         </main>
         <footer></footer>
