@@ -1,0 +1,27 @@
+
+[
+  {
+    "title": "Overwatering",
+    "description": "Too much water can lead to root rot. Most plants prefer soil that dries slightly between waterings."
+  },
+  {
+    "title": "Insufficient Light",
+    "description": "Placing plants in dark corners prevents photosynthesis. Know your plant's light requirements."
+  },
+  {
+    "title": "Wrong Pot Size",
+    "description": "Using pots that are too big or small can affect root health and water retention."
+  },
+  {
+    "title": "Neglecting Humidity",
+    "description": "Tropical plants need higher humidity. Dry air can cause leaf browning or drop."
+  },
+  {
+    "title": "Ignoring Pest Signs",
+    "description": "Small pests can quickly damage plants. Regularly inspect for spots, webbing, or sticky residue."
+  },
+  {
+    "title": "Using the Wrong Soil",
+    "description": "Different plants need different soils. For example, succulents need well-draining mixes."
+  }
+]
