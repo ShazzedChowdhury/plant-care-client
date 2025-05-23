@@ -1,7 +1,9 @@
 import React, { use } from "react";
 import Card from "../../../Components/Card/Card";
 
-const fetchPromise = fetch('/top-plant-care-mistake.json').then(res => res.json())
+const fetchPromise = fetch("/top-plant-care-mistake.json").then((res) =>
+  res.json()
+);
 const TopPlantCareMistakeSec = () => {
     const topMistakes = use(fetchPromise);
     

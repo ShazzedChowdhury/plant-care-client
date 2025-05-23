@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Snake Plant",
+    "category": "Succulent",
+    "careLevel": "Easy",
+    "waterFrequency": "every 15 days",
+    "image": "https://i.postimg.cc/G23RR8v7/Jade-Queen.png",
+    "description": "Snake plants are hardy and tolerant of low light and infrequent watering, making them perfect for beginners."
+  },
+  {
+    "name": "Spider Plant",
+    "category": "Houseplant",
+    "careLevel": "Easy",
+    "waterFrequency": "every 8 days",
+    "image": "https://i.postimg.cc/YSHkXy0w/Tropical-Trevor.png",
+    "description": "Spider plants are adaptable and fast-growing, thriving in indirect light and requiring minimal care."
+  },
+  {
+    "name": "Pothos",
+    "category": "Vine",
+    "careLevel": "Easy",
+    "waterFrequency":"every 3 days",
+    "image": "https://i.postimg.cc/YSHkXy0w/Tropical-Trevor.png",
+    "description": "Pothos are low-maintenance with trailing vines and can thrive in a range of lighting conditions."
+  },
+  {
+    "name": "Peace Lily",
+    "category": "Flowering Plant",
+    "careLevel": "Easy",
+    "waterFrequency":"every 7 days",
+    "image": "https://i.postimg.cc/YSHkXy0w/Tropical-Trevor.png",
+    "description": "Peace lilies are forgiving and bloom indoors. They prefer moderate light and slightly moist soil."
+  }
+]
