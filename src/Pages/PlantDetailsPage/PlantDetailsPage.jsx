@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import React from 'react';
 import { useLoaderData } from 'react-router';
 
@@ -7,6 +8,7 @@ const PlantDetailsPage = () => {
       top: 0,
       behavior: 'smooth'
     })
+    
     return (
       <section className="max-w-7xl mx-auto px-5 md:px-10 py-10 min-h-[calc(100vh-464px)]">
         <div className="hero bg-base-200 rounded-lg">
@@ -59,12 +61,20 @@ const PlantDetailsPage = () => {
                   {selectedPlant?.description}
                 </span>
               </p>
-              {/* <p className=" text-sm font-semibold text-black">
+              <p className=" text-sm font-semibold text-black">
                 Plant Added Date:{" "}
                 <span className="text-[#444444]">
-                  {}
+                  {format(new Date(selectedPlant?.plantAddedAt), "PPp")}
                 </span>
-              </p> */}
+              </p>
+              {selectedPlant.lastUpdatedDate && (
+                <p className=" text-sm font-semibold text-black">
+                  Plant Updated Date:{" "}
+                  <span className="text-[#444444]">
+                    {format(new Date(selectedPlant?.lastUpdatedDate), "PPp")}
+                  </span>
+                </p>
+              )}
             </div>
           </div>
         </div>
