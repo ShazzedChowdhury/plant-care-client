@@ -20,7 +20,7 @@ const MyPlantsPage = () => {
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:3000/my-plants/${id}`, {
+          fetch(`https://b11-a10-mango-plant-care-server.vercel.app/my-plants/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())

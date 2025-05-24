@@ -16,7 +16,7 @@ const UpdateMyPlantPage = () => {
         
 
         //send updated data to database
-        fetch(`http://localhost:3000/my-plant/${selectedPlant._id}`, {
+        fetch(`https://b11-a10-mango-plant-care-server.vercel.app/my-plant/${selectedPlant._id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

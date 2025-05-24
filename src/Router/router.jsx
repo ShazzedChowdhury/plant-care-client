@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: "all-plants/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/all-plants/${params.id}`),
+          fetch(`https://b11-a10-mango-plant-care-server.vercel.app/all-plants/${params.id}`),
         element: (
           <PrivateRouter>
             <PlantDetailsPage />
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       {
         path: "my-plants/:email",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/my-plants/${params.email}`),
+          fetch(`https://b11-a10-mango-plant-care-server.vercel.app/my-plants/${params.email}`),
         element: (
           <PrivateRouter>
             <MyPlantsPage />
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
       {
         path: "/update-plants/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/all-plants/${params.id}`),
+          fetch(`https://b11-a10-mango-plant-care-server.vercel.app/all-plants/${params.id}`),
         element: <UpdateMyPlantPage />,
         hydrateFallbackElement: <LoadingSpiner />
       },

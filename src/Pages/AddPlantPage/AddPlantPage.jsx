@@ -14,7 +14,7 @@ const AddPlantPage = () => {
         
 
         //send form data in the database
-        fetch("http://localhost:3000/plants", {
+        fetch("https://b11-a10-mango-plant-care-server.vercel.app/plants", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

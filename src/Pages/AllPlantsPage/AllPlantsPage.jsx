@@ -8,7 +8,7 @@ const AllPlantsPage = () => {
     const [ loading, setLoading ] = useState(true)
  
    useEffect(() => {
-       fetch(`http://localhost:3000/all-plants?searchPharams=${sort}`)
+       fetch(`https://b11-a10-mango-plant-care-server.vercel.app/all-plants?searchPharams=${sort}`)
          .then((res) => res.json())
          .then((data) => {
           setPlants(data);

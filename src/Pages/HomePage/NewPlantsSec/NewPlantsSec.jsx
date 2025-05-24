@@ -8,7 +8,7 @@ const NewPlantsSec = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/recent-plants")
+    fetch("https://b11-a10-mango-plant-care-server.vercel.app/recent-plants")
       .then((res) => res.json())
       .then((data) => {
         if (!showAll) {
