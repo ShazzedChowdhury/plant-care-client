@@ -37,14 +37,11 @@ const AddPlantPage = () => {
         form.reset()
     }
   return (
-    <section className="max-w-7xl mx-auto px-5 md:10 p-10 pb-40 bg-white">
+    <section className="max-w-7xl mx-auto px-5 md:10 p-10 pb-40 bg-white dark:bg-[#1d232a]">
       <div className="border border-gray-200 shadow-lg rounded-lg">
         <h1></h1>
         <p></p>
-        <form
-          onSubmit={handleAddPlantForm}
-          className="space-y-4 w-full p-4"
-        >
+        <form onSubmit={handleAddPlantForm} className="space-y-4 w-full p-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <label className="label mb-2">

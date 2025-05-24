@@ -6,11 +6,19 @@
 
 @plugin "daisyui/theme" {
     name: "light";
-    default: true;
     --color-accent: #70b023;
     --color-primary: #4d7447;
-    --color-secondary: teal;
 }
+
+@plugin "daisyui/theme" {
+    name: "dark";
+    --color-accent: #70b023;
+    --color-primary: #4d7447;
+    --color-neutral: #ffffff;
+    --color-gray-100: #1d232a;
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 * {
     font-family: "Poppins", sans-serif;

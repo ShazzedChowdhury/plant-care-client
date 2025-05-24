@@ -9,7 +9,7 @@ const Card = ({ index, mistake }) => {
           {index + 1}
         </div>
         <h6 className="mb-2 text-lg font-semibold leading-5">{mistake?.title}</h6>
-        <p className="mb-3 text-sm text-gray-900">
+        <p className="mb-3 text-sm text-neutral">
           {mistake?.description}
         </p>
       </div>

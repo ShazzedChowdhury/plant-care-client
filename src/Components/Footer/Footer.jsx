@@ -28,7 +28,7 @@ export const Footer = () => {
             </div>
           </Link>
           <div className="mt-6 lg:max-w-md">
-            <p className="text-sm text-gray-800">
+            <p className="text-sm text-neutral">
               Keep your plants happy and thriving with our easy-to-use plant
               care tracker. Whether you're a seasoned plant parent or just
               starting out, this tool helps you stay on top of watering
@@ -40,39 +40,39 @@ export const Footer = () => {
           </div>
         </div>
         <div>
-          <span className="text-base font-bold tracking-wide text-[#444444]">
+          <span className="text-base font-bold tracking-wide text-neutral">
             Social
           </span>
           <div className="flex items-center mt-1 space-x-3">
             <a
               href="https://www.facebook.com/"
               target="_blank"
-              className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400 btn p-0 w-10 h-10 rounded-full"
+              className="text-neutral transition-colors duration-300 hover:text-deep-purple-accent-400 btn p-0 w-10 h-10 rounded-full"
             >
               <FaFacebookF size={20} />
             </a>
             <a
               href="https://x.com/"
               target="_blank"
-              className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400 btn p-0 w-10 h-10 rounded-full"
+              className="text-neutral transition-colors duration-300 hover:text-deep-purple-accent-400 btn p-0 w-10 h-10 rounded-full"
             >
               <FaXTwitter size={20} />
             </a>
             <a
               href="https://www.linkedin.com/"
               target="_blank"
-              className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400 btn p-0 w-10 h-10 rounded-full"
+              className="text-neutral transition-colors duration-300 hover:text-deep-purple-accent-400 btn p-0 w-10 h-10 rounded-full"
             >
               <FaLinkedinIn size={20} />
             </a>
           </div>
-          <p className="text-sm mt-2 text-gray-500">
+          <p className="text-sm mt-2 text-neutral">
             Visite our social page for more information.
           </p>
         </div>
       </div>
       <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-neutral">
           © Copyright 2020 <span className="font-semibold">plantCare</span> Inc.
           All rights reserved.
         </p>

@@ -24,18 +24,18 @@ const BeginnerFriendlyPlantsSec = () => {
               alt="Plant image"
             />
             <div>
-              <h1 className="text-lg font-semibold text-[#000]">
+              <h1 className="text-lg font-semibold text-neutral">
                 {plant?.name}
               </h1>
-              <p className="text-sm font-normal text-[#444]">
+              <p className="text-sm font-normal text-neutral">
                 <span className="font-semibold">Category: </span>
                 {plant?.category}
               </p>
-              <p className="text-sm font-normal text-[#444]">
+              <p className="text-sm font-normal text-neutral">
                 <span className="font-semibold">Care Level: </span>
                 {plant?.careLevel}
               </p>
-              <p className="text-sm font-normal text-[#444]">
+              <p className="text-sm font-normal text-neutral">
                 <span className="font-semibold">Water Frequency: </span>
                 {plant?.waterFrequency}
               </p>

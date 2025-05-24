@@ -7,6 +7,7 @@ import UserProfile from "../UserProfile/UserProfile";
 import RegisterBtn from "../RegisterBtn/RegisterBtn";
 import LogOutBtn from "../LogOutBtn/LogOutBtn";
 import LogInBtn from "../LogInBtn/LogInBtn";
+import ToggleButton from "../ToggleButton/ToggleButton";
 
 const Navbar = () => {
   const { user, logOutUser, setUser, loading } = use(AuthContext);
@@ -91,7 +92,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-neutral"
           >
             {links}
           </ul>
@@ -112,6 +113,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end gap-5">
+        <ToggleButton />
         {!loading ? (
           user && <UserProfile user={user} />
         ) : (

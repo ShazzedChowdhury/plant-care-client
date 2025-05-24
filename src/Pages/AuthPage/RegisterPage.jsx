@@ -117,7 +117,7 @@ const RegisterPage = () => {
               Sign Up
             </button>
           </form>
-          <p className="text-sm font-normal text-[#444444]">
+          <p className="text-sm font-normal text-neutral">
             Already have an account ?{" "}
             <Link
               to="/auth/log-in-form"

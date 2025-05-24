@@ -8,7 +8,7 @@ const PageNotFound = () => {
           <div className="w-full h-40">
             <img className="object-cover object-center w-full h-full" src={notFounImg} alt="" />
           </div>
-          <h1 className='text-xl font-bold text-[#444444] mb-5'>Page Not Found!</h1>
+          <h1 className='text-xl font-bold text-neutral mb-5'>Page Not Found!</h1>
           <Link className="btn btn-primary text-white" to="/">
             Back to homepage
           </Link>

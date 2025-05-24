@@ -150,7 +150,7 @@ const LogInPage = () => {
               </svg>
               Login with Google
             </button>
-            <p className="text-sm font-normal text-[#444444]">
+            <p className="text-sm font-normal text-neutral">
               Don't have any account?{" "}
               <Link
                 to="/auth/register-form"

@@ -7,8 +7,7 @@ const PlantDetailsPage = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
-    })
-    
+    })    
     return (
       <section className="max-w-7xl mx-auto px-5 md:px-10 py-10 min-h-[calc(100vh-464px)]">
         <div className="hero bg-base-200 rounded-lg">
@@ -21,56 +20,56 @@ const PlantDetailsPage = () => {
               <h1 className="text-5xl font-bold">{selectedPlant?.plantName}</h1>
               <p className="mt-3 text-sm font-semibold text-black">
                 Category:{" "}
-                <span className="text-[#444444]">
+                <span className="text-neutral">
                   {selectedPlant?.category}
                 </span>
               </p>
               <p className=" text-sm font-semibold text-black">
                 Health Status:{" "}
-                <span className="text-[#444444]">
+                <span className="text-neutral">
                   {selectedPlant?.healthStatus}
                 </span>
               </p>
               <p className=" text-sm font-semibold text-black">
                 Care Level:{" "}
-                <span className="text-[#444444]">
+                <span className="text-neutral">
                   {selectedPlant?.careLevel}
                 </span>
               </p>
               <p className=" text-sm font-semibold text-black">
                 Water Frequency:{" "}
-                <span className="text-[#444444]">
+                <span className="text-neutral">
                   {selectedPlant?.wateringFrequency}
                 </span>
               </p>
               <p className=" text-sm font-semibold text-black">
                 Last watered Date:{" "}
-                <span className="text-[#444444]">
+                <span className="text-neutral">
                   {selectedPlant?.lastWateredDate}
                 </span>
               </p>
               <p className=" text-sm font-semibold text-black">
                 Next Watering Date:{" "}
-                <span className="text-[#444444]">
+                <span className="text-neutral">
                   {selectedPlant?.nextWateringDate}
                 </span>
               </p>
               <p className=" text-sm font-semibold text-black">
                 Description:{" "}
-                <span className="text-[#444444]">
+                <span className="text-neutral">
                   {selectedPlant?.description}
                 </span>
               </p>
               <p className=" text-sm font-semibold text-black">
                 Plant Added Date:{" "}
-                <span className="text-[#444444]">
+                <span className="text-neutral">
                   {format(new Date(selectedPlant?.plantAddedAt), "PPp")}
                 </span>
               </p>
               {selectedPlant.lastUpdatedDate && (
                 <p className=" text-sm font-semibold text-black">
                   Plant Updated Date:{" "}
-                  <span className="text-[#444444]">
+                  <span className="text-neutral">
                     {format(new Date(selectedPlant?.lastUpdatedDate), "PPp")}
                   </span>
                 </p>

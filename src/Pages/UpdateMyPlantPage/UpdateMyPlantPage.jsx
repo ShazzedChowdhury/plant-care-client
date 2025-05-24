@@ -37,7 +37,7 @@ const UpdateMyPlantPage = () => {
         })
     }
     return (
-      <section className="max-w-7xl mx-auto px-5 md:10 pt-10 pb-40 bg-white min-h-[calc(100vh-464px)]">
+      <section className="max-w-7xl mx-auto px-5 md:10 pt-10 pb-40 bg-white dark:bg-[#1d232a] min-h-[calc(100vh-464px)]">
         <div className="border border-gray-200 shadow-lg rounded-lg">
           <h1></h1>
           <p></p>
