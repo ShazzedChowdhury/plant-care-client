@@ -1,12 +1,25 @@
-# React + Vite
+# PlantCare
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌿 **PlantCare** is a web application designed to help users effectively monitor and maintain the health of their mango plants.
 
-Currently, two official plugins are available:
+🔗 **Live Site:** [https://b11-a10-mango-plantcare-client.web.app/](https://b11-a10-mango-plantcare-client.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Key Features
 
-## Expanding the ESLint configuration
+- 🌱 **User-Friendly Interface** – Clean and intuitive UI for navigating plant care tips and data.
+- 📅 **Smart Date Handling** – Uses `date-fns` to manage care schedules and track history.
+- 💡 **Interactive Tooltips** – Enhances UX with helpful hints powered by `react-tooltip`.
+- 🌿 **Visual Enhancements** – Rich iconography with `react-icons` for a more engaging UI.
+- 🌗 **Theme Toggle** – Supports light/dark mode with preferences saved in `localStorage`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+### 🛠️ Built With
+
+- **React**
+- **TailwindCSS**
+- **DaisyUI**
+- **react-icons**
+- **date-fns**
+- **react-tooltip**
+
+
