@@ -11,7 +11,7 @@ const LogInPage = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    console.log(location)
+  
     const handleSignInForm = (e) => {
         e.preventDefault();
         const form = e.target;

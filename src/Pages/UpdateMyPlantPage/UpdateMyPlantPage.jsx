@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const UpdateMyPlantPage = () => {
     const { user } = use(AuthContext);
     const selectedPlant = useLoaderData();
-    console.log(selectedPlant)
+
 
     const handleUpdatePlantForm = (e) => {
         e.preventDefault();

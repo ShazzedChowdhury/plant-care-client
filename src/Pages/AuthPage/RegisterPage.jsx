@@ -13,7 +13,6 @@ const RegisterPage = () => {
     const handleSignUpFrom = (e) => {
         e.preventDefault();
         const form = e.target;
-        console.log(e.target)
         const formData = new FormData(form);
         const { userName, email, photoUrl, password } = Object.fromEntries(formData.entries());
        

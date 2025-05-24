@@ -39,7 +39,6 @@ const NewPlantsSec = () => {
         <button
           onClick={() => {
             setShowAll((prev) => !prev)
-            console.log(showAll)
             showAll && window.scrollTo({
               top: 500,
               behavior: "smooth",
