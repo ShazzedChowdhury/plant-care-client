@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 const SingleCard = ({plant}) => {
     const [ showOverlay, setOverLay ] = useState(false)
-    console.log(plant)
+    const navigate = useNavigate()
+    const handleViewDetails = (id) => {
+      navigate(`/all-plants/${id}`);
+    }
     return (
       <div
         onClick={() => setOverLay((prev) => !prev)}
@@ -22,7 +26,11 @@ const SingleCard = ({plant}) => {
             <span className='font-semibold'>Category:{" "}</span>
             {plant?.category}
           </p>
-          <button className="btn btn-primary text-white">View Details</button>
+          <button
+           onClick={() => handleViewDetails(plant?._id)}
+           className="btn btn-primary text-white"
+          >
+            View Details</button>
         </div>
       </div>
     );

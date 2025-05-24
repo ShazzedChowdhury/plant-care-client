@@ -3,7 +3,10 @@ import { useLoaderData } from 'react-router';
 
 const PlantDetailsPage = () => {
     const selectedPlant = useLoaderData();
-    
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
     return (
       <section className="max-w-7xl mx-auto px-5 md:px-10 py-10 min-h-[calc(100vh-464px)]">
         <div className="hero bg-base-200 rounded-lg">

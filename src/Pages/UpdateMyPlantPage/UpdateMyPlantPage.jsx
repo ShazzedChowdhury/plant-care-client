@@ -78,9 +78,9 @@ const UpdateMyPlantPage = () => {
                 </label>
                 <select
                   name="category"
+                  defaultValue={selectedPlant?.category}
                   className="select select-bordered w-full"
                 >
-                  <option value="">Select Category</option>
                   <option value="succulent">Succulent</option>
                   <option value="fern">Fern</option>
                   <option value="flowering">Flowering</option>
@@ -95,9 +95,9 @@ const UpdateMyPlantPage = () => {
                 </label>
                 <select
                   name="careLevel"
+                  defaultValue={selectedPlant?.careLevel}
                   className="select select-bordered w-full"
                 >
-                  <option value="">Select Care Level</option>
                   <option value="easy">Easy</option>
                   <option value="moderate">Moderate</option>
                   <option value="difficult">Difficult</option>
@@ -147,9 +147,9 @@ const UpdateMyPlantPage = () => {
                 </label>
                 <select
                   name="healthStatus"
+                  defaultValue={selectedPlant?.healthStatus}
                   className="select select-bordered w-full"
                 >
-                  <option value="">Select Health Status</option>
                   <option value="healthy">Healthy</option>
                   <option value="thriving">Thriving</option>
                   <option value="growing">Growing</option>
