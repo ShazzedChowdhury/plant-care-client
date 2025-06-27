@@ -3,8 +3,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-
+import GetStartedBtn from '../../../Components/GetStartedBtn/GetStartedBtn';
 
 
 const BannerCarousel = () => {
@@ -14,19 +13,19 @@ const BannerCarousel = () => {
         spaceBetween={30}
         slidesPerView={1}
         pagination={{ clickable: true }}
-        className="max-w-7xl mx-auto h-full lg:h-[500px] "
+        className="max-w-7xl mx-auto h-full md:min-h-[calc(100vh-67px)] items-center"
       >
         {/* carousel 1 */}
         <SwiperSlide className="w-full h-full">
-          <div className="hero h-full px-5 md:px-10">
-            <div className="hero-content px-0 flex-col lg:flex-row-reverse">
+          <div className="hero h-full px-5 md:px-10 py-5 md:py-12 mb-5">
+            <div className="hero-content px-0 flex-col lg:flex-row-reverse ">
               <img
                 src="https://i.postimg.cc/Gm012Sks/banner-1.png"
                 alt=""
                 className="w-full md:max-w-[285px] h-full max-h-[400px] rounded-lg"
               />
               <div>
-                <h1 className="text-5xl lg:text-6xl font-bold leading-14 md:leading-18">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-10 md:leading-18">
                   Proper
                   <br />
                   Care of <span className="text-[#70b023]">Plants</span>
@@ -39,9 +38,7 @@ const BannerCarousel = () => {
                   easy-to-use dashboard. Keep your plants thriving
                   effortlessly!"
                 </p>
-                <button className="btn btn-primary text-white">
-                  Get Started
-                </button>
+                <GetStartedBtn />
               </div>
             </div>
           </div>
@@ -49,15 +46,15 @@ const BannerCarousel = () => {
         {/* carousel 2 */}
         <SwiperSlide className="w-full h-full">
           <div className="hero h-full">
-            <div className="hero h-full px-5 md:px-10">
-              <div className="hero-content px-0 flex-col lg:flex-row-reverse">
+            <div className="hero h-full px-5 md:px-10 mb-5">
+              <div className="hero-content px-0 flex-col lg:flex-row-reverse py-5 md:py-12">
                 <img
                   src="https://i.postimg.cc/d0VYfcFM/banner-2.png"
                   alt=""
                   className="w-full md:max-w-[285px] h-full max-h-[400px] rounded-lg"
                 />
                 <div>
-                  <h1 className="text-5xl lg:text-6xl font-bold leading-14 md:leading-18">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-10 md:leading-18">
                     Smart Tips
                     <br />
                     for <span className="text-[#70b023]">Thriving Plants</span>
@@ -70,9 +67,7 @@ const BannerCarousel = () => {
                     leafy jungle or a low-maintenance garden, find the perfect
                     match and get the guidance you need to nurture each one."
                   </p>
-                  <button className="btn btn-primary text-white">
-                    Get Started
-                  </button>
+                  <GetStartedBtn />
                 </div>
               </div>
             </div>
@@ -82,14 +77,14 @@ const BannerCarousel = () => {
         <SwiperSlide className="w-full h-full">
           <div className="hero h-full">
             <div className="hero h-full px-5 md:px-10">
-              <div className="hero-content px-0 flex-col lg:flex-row-reverse">
+              <div className="hero-content px-0 flex-col lg:flex-row-reverse py-5 md:py-12">
                 <img
                   src="https://i.postimg.cc/hPXShd6N/banner-3.png"
                   alt=""
                   className="w-full md:max-w-[285px] h-full max-h-[400px] rounded-lg"
                 />
                 <div>
-                  <h1 className="text-5xl lg:text-6xl font-bold leading-14 md:leading-18">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-10 md:leading-18">
                     Explore a World
                     <br />
                     of <span className="text-[#70b023]">Plant Varieties</span>
@@ -102,9 +97,7 @@ const BannerCarousel = () => {
                     leafy jungle or a low-maintenance garden, find the perfect
                     match and get the guidance you need to nurture each one."
                   </p>
-                  <button className="btn btn-primary text-white">
-                    Get Started
-                  </button>
+                  <GetStartedBtn />
                 </div>
               </div>
             </div>
