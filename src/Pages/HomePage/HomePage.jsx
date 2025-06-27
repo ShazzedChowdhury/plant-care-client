@@ -4,6 +4,7 @@ import NewAddPlantSec from "./NewPlantsSec/NewPlantsSec";
 import TopPlantCareMistakeSec from "./TopPlantCareMistakeSec/TopPlantCareMistakeSec";
 import BeginnerFriendlyPlantsSec from "./BeginnerFriendlyPlantsSec/BeginnerFriendlyPlantsSec";
 import LoadingSpiner from "../../Components/Loader/LoadingSpiner";
+import CtaSection from "./CtaSection/CtaSection";
 
 const HomePage = () => {
   return (
@@ -23,6 +24,9 @@ const HomePage = () => {
         <Suspense fallback={<LoadingSpiner />}>
           <BeginnerFriendlyPlantsSec />
         </Suspense>
+      </section>
+      <section className="bg-primary">
+        <CtaSection />
       </section>
     </>
   );
