@@ -4,6 +4,6 @@ ul li a,
     font-weight: 500;
 }
 
-.active {
+#navbar-manu .active {
     border: 2px solid #4d7447;
 }

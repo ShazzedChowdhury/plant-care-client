@@ -47,7 +47,7 @@ const Navbar = () => {
             <NavLink to={`/my-plants/${user?.email}`}>My Plants</NavLink>
           </li>
           <li>
-            <NavLink to={`/Dashboard`}>Dashboard</NavLink>
+            <NavLink to={`dashboard`}>Dashboard</NavLink>
           </li>
         </>
       )}
@@ -98,6 +98,7 @@ const Navbar = () => {
             </svg>
           </div>
           <ul
+            id="navbar-manu"
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-neutral"
           >
@@ -117,7 +118,9 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links}</ul>
+        <ul id="navbar-manu" className="menu menu-horizontal px-1">
+          {links}
+        </ul>
       </div>
       <div className="navbar-end gap-5">
         <ToggleButton />

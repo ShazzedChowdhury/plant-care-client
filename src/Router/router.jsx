@@ -77,7 +77,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/dashboard",
+    path: "/",
     element: (
       <PrivateRouter>
         <DashboardLayout />
@@ -86,7 +86,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        path: "overview",
+        path: "dashboard",
         element: <OverviewPage />,
       },
       {

@@ -7,16 +7,16 @@ const DashboardLayout = () => {
   const links = (
     <>
       <li>
-        <NavLink to="/dashboard/overview">Overview</NavLink>
+        <NavLink to="dashboard">Overview</NavLink>
       </li>
       <li>
-        <NavLink to="/dashboard/all-plants">All Plants</NavLink>
+        <NavLink to="dashboard/all-plants">All Plants</NavLink>
       </li>
       <li>
-        <NavLink to="/dashboard/add-plants">Add Plants</NavLink>
+        <NavLink to="dashboard/add-plants">Add Plants</NavLink>
       </li>
       <li>
-        <NavLink to={`/dashboard/my-plants/${user?.email}`}>My Plants</NavLink>
+        <NavLink to={`dashboard/my-plants/${user?.email}`}>My Plants</NavLink>
       </li>
     </>
   );
@@ -58,7 +58,7 @@ const DashboardLayout = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+        <ul id="dashboard-menu" className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
           {/* Sidebar content here */}
           {links}
         </ul>
