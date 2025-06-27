@@ -10,7 +10,7 @@ const SingleCard = ({plant}) => {
     return (
       <div
         onClick={() => setOverLay((prev) => !prev)}
-        className="card bg-base-100 shadow-sm relative overflow-hidden group h-96"
+        className="card bg-base-100 shadow-sm relative overflow-hidden group h-68"
       >
         <img src={plant?.image} className="object-cover w-full h-full" />
 

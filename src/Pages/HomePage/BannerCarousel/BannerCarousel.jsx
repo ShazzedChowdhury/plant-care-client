@@ -46,8 +46,8 @@ const BannerCarousel = () => {
         {/* carousel 2 */}
         <SwiperSlide className="w-full h-full">
           <div className="hero h-full">
-            <div className="hero h-full px-5 md:px-10 mb-5">
-              <div className="hero-content px-0 flex-col lg:flex-row-reverse py-5 md:py-12">
+            <div className="hero h-full px-5 md:px-10 py-5 md:py-12 mb-5">
+              <div className="hero-content px-0 flex-col lg:flex-row-reverse ">
                 <img
                   src="https://i.postimg.cc/d0VYfcFM/banner-2.png"
                   alt=""
@@ -76,8 +76,8 @@ const BannerCarousel = () => {
         {/* carousel 3 */}
         <SwiperSlide className="w-full h-full">
           <div className="hero h-full">
-            <div className="hero h-full px-5 md:px-10">
-              <div className="hero-content px-0 flex-col lg:flex-row-reverse py-5 md:py-12">
+            <div className="hero h-full px-5 md:px-10 py-5 md:py-12 mb-5">
+              <div className="hero-content px-0 flex-col lg:flex-row-reverse ">
                 <img
                   src="https://i.postimg.cc/hPXShd6N/banner-3.png"
                   alt=""

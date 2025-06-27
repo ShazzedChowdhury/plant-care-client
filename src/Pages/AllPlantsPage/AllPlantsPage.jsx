@@ -22,55 +22,43 @@ const AllPlantsPage = () => {
     
     return (
       <section className="max-w-7xl px-5 md:-10 mx-auto pt-10 pb-40 min-h-[calc(100vh-464px)]">
-        <div>
+        <div className="mb-5 text-right">
           <select
             name="sortByCareLevel"
             defaultValue="Choose a carelevel"
-            className="select select-neutral w-fit"
+            className="select select-neutral w-fit focus:outline-none"
             onChange={(e) => setSort(e.target.value)}
           >
-            <option value={''}>All</option>
+            <option value={""}>All</option>
             <option value="easy">Easy</option>
             <option value="moderate">Moderate</option>
             <option value="difficult">Difficult</option>
           </select>
         </div>
-        <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
-          <table className="table">
-            {/* head */}
-            <thead className="bg-[#444444] text-white">
-              <tr>
-                <th>No</th>
-                <th>Plant Name</th>
-                <th>Category</th>
-                <th>Watering Frequency</th>
-                <th>Care Level</th>
-                <th>Heath Status</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* row 1 */}
-              {plants.map((plant, index) => (
-                <tr key={plant?._id}>
-                  <td>{index + 1}</td>
-                  <td>{plant?.plantName}</td>
-                  <td>{plant?.category}</td>
-                  <td>{plant?.wateringFrequency}</td>
-                  <td>{plant?.careLevel}</td>
-                  <td>{plant?.healthStatus}</td>
-                  <td>
-                    <Link
-                      to={`/all-plants/${plant?._id}`}
-                      className="btn btn-xs"
-                    >
-                      View Details
-                    </Link>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="grid grid-cols 1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          {plants.map((plant) => {
+            console.log(plant)
+            return (
+              <div key={plant._id} className="card bg-base-100  shadow-sm">
+                <figure className="w-full h-[295px]">
+                  <img
+                    className="object-cover w-full h-full"
+                    src={plant?.image}
+                  />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">Card Title</h2>
+                  <p>
+                    A card component has a figure, a body part, and inside body
+                    there are title and actions parts
+                  </p>
+                  <div className="card-actions justify-end">
+                    <button className="btn btn-primary btn-sm ">View Details</button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
     );
