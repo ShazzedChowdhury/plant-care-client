@@ -9,7 +9,7 @@ const PlantDetailsPage = () => {
       behavior: 'smooth'
     })    
     return (
-      <section className="max-w-7xl mx-auto px-5 md:px-10 py-10 min-h-[calc(100vh-68px)] flex items-center">
+      <section className="max-w-7xl mx-auto px-5 md:px-10 py-10 min-h-[calc(100vh-68px-395px)]">
         <div className="hero bg-base-200 rounded-lg">
           <div className="hero-content flex-col lg:flex-row justify-between w-full gap-10">
             <img

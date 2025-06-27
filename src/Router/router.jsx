@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router';
-import MainLayout from '../MainLayout/MainLayout';
+import MainLayout from '../Layout/MainLayout/MainLayout';
 import HomePage from '../Pages/HomePage/HomePage';
 import AllPlantsPage from '../Pages/AllPlantsPage/AllPlantsPage';
 import AddPlantPage from '../Pages/AddPlantPage/AddPlantPage';
@@ -12,6 +12,9 @@ import UpdateMyPlantPage from '../Pages/UpdateMyPlantPage/UpdateMyPlantPage';
 import PrivateRouter from '../PrivateRoute/PrivateRouter';
 import LoadingSpiner from '../Components/Loader/LoadingSpiner';
 import PageNotFound from '../Pages/PageNotFound/PageNotFound';
+import DashboardLayout from '../Layout/DashboardLayout/DashboardLayout';
+import OverviewPage from '../Pages/Dashboard/OverviewPage';
+import DashboardAllItems from '../Pages/Dashboard/DashboardAllItems';
 
 const router = createBrowserRouter([
   {
@@ -31,13 +34,15 @@ const router = createBrowserRouter([
       {
         path: "all-plants/:id",
         loader: ({ params }) =>
-          fetch(`https://b11-a10-mango-plant-care-server.vercel.app/all-plants/${params.id}`),
+          fetch(
+            `https://b11-a10-mango-plant-care-server.vercel.app/all-plants/${params.id}`
+          ),
         element: (
           <PrivateRouter>
             <PlantDetailsPage />
           </PrivateRouter>
         ),
-        hydrateFallbackElement: <LoadingSpiner />
+        hydrateFallbackElement: <LoadingSpiner />,
       },
       {
         path: "add-plant-form",
@@ -50,20 +55,43 @@ const router = createBrowserRouter([
       {
         path: "my-plants/:email",
         loader: ({ params }) =>
-          fetch(`https://b11-a10-mango-plant-care-server.vercel.app/my-plants/${params.email}`),
+          fetch(
+            `https://b11-a10-mango-plant-care-server.vercel.app/my-plants/${params.email}`
+          ),
         element: (
           <PrivateRouter>
             <MyPlantsPage />
           </PrivateRouter>
         ),
-        hydrateFallbackElement: <LoadingSpiner />
+        hydrateFallbackElement: <LoadingSpiner />,
       },
       {
         path: "/update-plants/:id",
         loader: ({ params }) =>
-          fetch(`https://b11-a10-mango-plant-care-server.vercel.app/all-plants/${params.id}`),
+          fetch(
+            `https://b11-a10-mango-plant-care-server.vercel.app/all-plants/${params.id}`
+          ),
         element: <UpdateMyPlantPage />,
-        hydrateFallbackElement: <LoadingSpiner />
+        hydrateFallbackElement: <LoadingSpiner />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRouter>
+        <DashboardLayout />
+      </PrivateRouter>
+    ),
+    children: [
+      {
+        index: true,
+        path: "overview",
+        element: <OverviewPage />,
+      },
+      {
+        path: "all-plants",
+        element: <DashboardAllItems />,
       },
     ],
   },
@@ -76,9 +104,9 @@ const router = createBrowserRouter([
     element: <RegisterPage />,
   },
   {
-    path: '*',
-    element: <PageNotFound />
-  }
+    path: "*",
+    element: <PageNotFound />,
+  },
 ]);
 
 export default router;

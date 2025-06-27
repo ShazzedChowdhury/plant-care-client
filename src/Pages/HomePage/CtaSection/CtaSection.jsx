@@ -1,5 +1,6 @@
 import React from "react";
 import gardinerImag from "../../../assets/gardiner.png"
+import { Link } from "react-router";
 
 const CtaSection = () => {
   return (
@@ -12,7 +13,7 @@ const CtaSection = () => {
           Explore our beautiful collection of indoor and outdoor plants. Perfect
           for every space, mood, and season.
         </p>
-        <button class="btn btn-neutral btn-lg w-fit">See All Plants</button>
+        <Link to="/all-plants" class="btn btn-neutral btn-lg w-fit">See All Plants</Link>
       </div>
       <div className="flex-1 flex justify-end items-end">
         <img className="max-w-lg w-full" src={gardinerImag} alt="cta image" />

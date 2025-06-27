@@ -13,7 +13,7 @@ const BannerCarousel = () => {
         spaceBetween={30}
         slidesPerView={1}
         pagination={{ clickable: true }}
-        className="max-w-7xl mx-auto h-full md:min-h-[calc(100vh-67px)] items-center"
+        className="max-w-7xl mx-auto h-full md:h-[600px] items-center"
       >
         {/* carousel 1 */}
         <SwiperSlide className="w-full h-full">

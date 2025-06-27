@@ -38,12 +38,19 @@ const Navbar = () => {
       <li>
         <NavLink to="/all-plants">All Plants</NavLink>
       </li>
-      <li>
-        <NavLink to="/add-plant-form">Add Plant</NavLink>
-      </li>
-      <li>
-        <NavLink to={`/my-plants/${user?.email}`}>My Plants</NavLink>
-      </li>
+      {user && (
+        <>
+          <li>
+            <NavLink to="/add-plant-form">Add Plant</NavLink>
+          </li>
+          <li>
+            <NavLink to={`/my-plants/${user?.email}`}>My Plants</NavLink>
+          </li>
+          <li>
+            <NavLink to={`/Dashboard`}>Dashboard</NavLink>
+          </li>
+        </>
+      )}
       <div className="block lg:hidden">
         {user ? (
           <li>

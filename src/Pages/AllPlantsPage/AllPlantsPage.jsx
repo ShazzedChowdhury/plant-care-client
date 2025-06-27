@@ -22,7 +22,7 @@ const AllPlantsPage = () => {
    }
     
     return (
-      <section className="max-w-7xl px-5 md:-10 mx-auto py-20 min-h-[calc(100vh-68px)]">
+      <section className="max-w-7xl px-5 md:-10 mx-auto py-20 min-h-[calc(100vh-68px-395px)]">
         <div className="mb-5 text-right">
           <select
             name="sortByCareLevel"
@@ -38,7 +38,7 @@ const AllPlantsPage = () => {
         </div>
         <div className="grid grid-cols 1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {plants.map((plant) => {
-            console.log(plant)
+            console.log(plant);
             return (
               <div key={plant._id} className="card bg-base-100  shadow-sm">
                 <figure className="w-full h-[295px]">
