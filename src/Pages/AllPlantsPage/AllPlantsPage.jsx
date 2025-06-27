@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { data, Link } from 'react-router';
+import { data, Link, useNavigate } from 'react-router';
 import LoadingSpiner from '../../Components/Loader/LoadingSpiner';
 
 const AllPlantsPage = () => {
    const [plants, setPlants] = useState([]);
     const [sort, setSort] = useState('')
-    const [ loading, setLoading ] = useState(true)
+    const [ loading, setLoading ] = useState(true);
+    const navigate = useNavigate();
  
    useEffect(() => {
        fetch(`https://b11-a10-mango-plant-care-server.vercel.app/all-plants?searchPharams=${sort}`)
@@ -21,7 +22,7 @@ const AllPlantsPage = () => {
    }
     
     return (
-      <section className="max-w-7xl px-5 md:-10 mx-auto pt-10 pb-40 min-h-[calc(100vh-464px)]">
+      <section className="max-w-7xl px-5 md:-10 mx-auto py-20 min-h-[calc(100vh-68px)]">
         <div className="mb-5 text-right">
           <select
             name="sortByCareLevel"
@@ -47,13 +48,15 @@ const AllPlantsPage = () => {
                   />
                 </figure>
                 <div className="card-body">
-                  <h2 className="card-title">Card Title</h2>
-                  <p>
-                    A card component has a figure, a body part, and inside body
-                    there are title and actions parts
-                  </p>
+                  <h2 className="card-title">{plant?.plantName}</h2>
+                  <p>{plant?.description}</p>
                   <div className="card-actions justify-end">
-                    <button className="btn btn-primary btn-sm ">View Details</button>
+                    <button
+                      onClick={() => navigate(`/all-plants/${plant?._id}`)}
+                      className="btn btn-primary btn-sm "
+                    >
+                      View Details
+                    </button>
                   </div>
                 </div>
               </div>
