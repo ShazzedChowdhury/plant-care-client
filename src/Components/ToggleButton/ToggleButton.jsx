@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { ImSun } from 'react-icons/im';
 import { LuSunMoon } from 'react-icons/lu';
+import { ThemeContext } from '../../Contexts/Theme/ThemeProvider';
 
 const ToggleButton = () => {
-    const [ theme, setTheme ] = useState(localStorage.getItem("theme") || "light")
-    
-    useEffect(() => {
-        localStorage.setItem("theme", theme);
-        document.documentElement.setAttribute("data-theme", theme)
-    }, [theme])
+   const {theme, setTheme} = use(ThemeContext)
     
     return (
       <label className="swap swap-rotate">
